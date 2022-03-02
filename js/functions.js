@@ -93,7 +93,7 @@ const playedTurnMultiplayer = (event) => {
         gameWinner();
         if(player === 1) {player++;}
         else{player--;}
-        $( ".down-menu-indicator-label" ).text(`${player} player`);
+        $( ".down-menu-indicator-label" ).text(`${player} PLAYER`);
     }
 }
 
@@ -334,13 +334,14 @@ const playedTurnSingleplayer = (event) => {
         if(cellNum == 2 || cellNum == 5 || cellNum == 8) {columnIndex = 2}
         else {if(cellNum == 1 || cellNum == 4 || cellNum == 7) {columnIndex = 1}
         else{columnIndex = 3}}
-
+        
+        
         if(alreadyFullArray[cellNum] == 'td0' && game.gameStatus == 'playing'){
             $(`.td${computerTurn}`).append( `<img class='td-img' src='css/images/player${player}.png'/>` );
             $(`.td${computerTurn}`).addClass('no-after');
             $(`.td${computerTurn}`).off( "click" );
             howManyShapesDrawn++;
-            
+
             if(rowIndex === 1){
                 gameTrackingSymbol.row1[columnIndex] = `${player}`;
                 gameTracking.row1[columnIndex] = `${cellNum}`;
