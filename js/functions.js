@@ -223,47 +223,16 @@ const playedTurnSingleplayer = (event) => {
         game.turn = 10;
         alreadyFullArray[event.target.className[2]] = `td${event.target.className[2]}`;
 
-        switch (event.target.className[2]) {
-            case '1':
-                gameTrackingSymbol.row1[1] = player;
-            break;
+        if(event.target.className[2] == 1) {gameTrackingSymbol.row1[1] = `${player}`}
+        if(event.target.className[2] == 2) {gameTrackingSymbol.row1[2] = `${player}`}
+        if(event.target.className[2] == 3) {gameTrackingSymbol.row1[3] = `${player}`}
+        if(event.target.className[2] == 4) {gameTrackingSymbol.row2[1] = `${player}`}
+        if(event.target.className[2] == 5) {gameTrackingSymbol.row2[2] = `${player}`}
+        if(event.target.className[2] == 6) {gameTrackingSymbol.row2[3] = `${player}`}
+        if(event.target.className[2] == 7) {gameTrackingSymbol.row3[1] = `${player}`}
+        if(event.target.className[2] == 8) {gameTrackingSymbol.row3[2] = `${player}`}
+        if(event.target.className[2] == 9) {gameTrackingSymbol.row3[3] = `${player}`}
 
-            case '2':
-                gameTrackingSymbol.row1[2] = player;
-            break;
-
-            case '3':
-                gameTrackingSymbol.row1[3] = player;
-            break;
-
-            case '4':
-                gameTrackingSymbol.row2[1] = player;
-            break;
-
-            case '5':
-                gameTrackingSymbol.row2[2] = player;
-            break;
-
-            case '6':
-                gameTrackingSymbol.row2[3] = player;
-            break;
-
-            case '7':
-                gameTrackingSymbol.row3[1] = player;
-            break;
-
-            case '8':
-                gameTrackingSymbol.row3[2] = player;
-            break;
-
-            case '9':
-                gameTrackingSymbol.row3[3] = player;
-            break;
-
-            default:
-                console.log('default was executed');
-                break;
-        }
         gameWinner();
         return;
     }
